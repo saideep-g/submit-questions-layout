@@ -1,0 +1,80 @@
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background: red;
+  color: white;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.question {
+  border-right: 1px solid #fafafa;
+}
+#question-title .note-editable{
+  color: #2dbe60;
+  font-size: 20px;
+}
+#question-title .note-placeholder{
+  font-size: 20px;
+}
+#question-title{
+  margin-bottom: 10px;
+}
+.options {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.options .note-editable{
+  border-bottom: 1px solid #e2e2e2;
+  margin-top: 15px;
+}
+.option {
+  margin-bottom: 10px;
+}
+.delete-icon{
+  display: inline-block;
+  position: absolute;
+  margin-left: 5px;
+  top: 14px;
+  margin-right: 5px;
+  color: red;
+}
+.answer-checkbox{
+  display: inline-block;
+  position: absolute;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.is_correct {
+  color: #8C65D3;
+}
+.option-item{
+  width: 97%;
+  float: left;
+  position: relative;
+  margin-left: 15px;
+  min-height: 1px;
+  padding-left: 15px;
+}
+.reference {
+  float: left;
+}
+.submit-question-buttons{
+  margin-left: 40px;
+  display: inline-block;
+}
+.question-details{
+  display: inline-block;
+}
+.reference:hover {
+  color: blue;
+  cursor: pointer;
+  text-decoration: none;
+}

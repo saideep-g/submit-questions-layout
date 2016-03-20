@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- include libraries(jQuery, bootstrap) -->
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- include summernote css/js-->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div style = 'margin-left: 8.33%'> <a class="navbar-brand" href="#">Artiquest</a> </div>
+    </div>
+  </nav>
+
+  <!--Main code starts here-->
+    <!--Intended to insert 3 step process of creating questions-->
+
+  <!--Question Code here-->
+  <div class = 'question col-md-6'>
+
+    <div id = 'question-title'>
+        <div id="summernote-title" > Wonderful Title for an Awesome Question</div>
+    </div>
+    <div id = 'question-description'>
+      <div id="summernote"></div>
+    </div>
+
+    <!--Question Options-->
+    <div>
+      <div class = 'options'>
+        <!--Question Option1-->
+        <div class = 'col-md-12 option row'>
+          <div class = 'delete-icon'>
+            <i class="fa fa-minus-circle fa-lg"></i> </div>
+          <div class = 'col-md-10 option-item'>
+            <div class="options-summernote"></div>
+          </div>
+          <div class = 'answer-checkbox'>
+            <i class="checkbox-item fa fa-circle-thin fa-3x"></i> </div>
+        </div>
+        <!--Question Option2-->
+        <div class = 'col-md-12 option row'>
+          <div class = 'delete-icon'>
+            <i class="fa fa-minus-circle fa-lg"></i> </div>
+          <div class = 'col-md-10 col-md-offset-1 option-item'>
+            <div class="options-summernote"></div>
+          </div>
+          <div class = 'answer-checkbox'>
+            <i class="checkbox-item fa fa-circle-thin fa-3x"></i> </div>
+        </div>
+
+
+        <!--Question Option3-->
+        <div class = 'col-md-12 row'>
+          <div class = 'delete-icon'>
+            <i class="fa fa-minus-circle fa-lg"></i> </div>
+          <div class = 'col-md-10 col-md-offset-1 option-item'>
+            <div class="options-summernote"></div>
+          </div>
+          <div class = 'answer-checkbox'>
+            <i class="checkbox-item fa fa-circle-thin fa-3x"></i> </div>
+        </div>
+
+        <!--Question Option4-->
+        <div class = 'col-md-12 row'>
+          <div class = 'delete-icon'>
+            <i class="fa fa-minus-circle fa-lg"></i> </div>
+          <div class = 'col-md-10 col-md-offset-1 option-item'>
+            <div class="options-summernote"></div>
+          </div>
+          <div class = 'answer-checkbox'>
+            <i class="checkbox-item fa fa-check-circle fa-3x is_correct"></i> </div>
+        </div>
+
+    </div>
+  </div>
+  <div class = 'reference-block'>
+      <a class = 'reference'data-toggle="modal" data-target="#myModal">Reference </a>
+
+      <!-- Modal -->
+      <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Insert Reference Link</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Text to display</label>
+                <input class="note-link-text form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label>To what URL should this link go?</label>
+                <input class="note-link-url form-control" type="text" value="http://">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" checked> Open in new window</label></div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save Link</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+
+  <div class = 'pull-right' >
+    <div class = 'submit-question-buttons'>
+      <button id="back" class="btn btn-default" type="button">Back</button>
+    </div>
+    <div class = 'submit-question-buttons'>
+      <button id="save" class="btn btn-default" type="button">Save</button>
+    </div>
+    <div class = 'submit-question-buttons'>
+      <button id="publish" class="btn btn-primary" type="button">Publish</button>
+    </div>
+  </div>
+</div>
+<!--Question Details Main Block-->
+<div class = 'question-details col-md-4'>
+
+
+
+</div>
+  <script>
+    $(document).ready(function() {
+
+      $('#summernote-title').summernote(
+        {
+          airMode: true,
+          placeholder: 'Give an awesome title to your question...',
+          disableDragAndDrop: true
+        });
+
+    $('#summernote').summernote(
+      {
+          placeholder: 'write here only...',
+          dialogsInBody: true,
+          minHeight: 100,
+          maxHeight: 350,
+          toolbar: [
+                    ['style', ['bold', 'italic', 'underline']],
+                    ['fontsize',['color']],
+                    ['para',['ul', 'ol', 'paragraph']],
+                    ['insert',['table','hr']],
+                    ['insert',['link','picture']],
+                    ['misc',['fullscreen', 'codeview']]
+
+                  ]
+      });
+    $('.options-summernote').summernote(
+      {
+        placeholder: 'Enter Answer Choices/ Options here ...',
+        airMode: true,
+        popover: {
+            air: [
+                  ['style', ['bold', 'italic', 'underline']],
+                  ['fontsize',['color']],
+                  ['para',['ul', 'ol', 'paragraph']],
+                  ['insert',['table','hr']],
+                  ['insert',['link','picture']],
+                ]}
+      });
+      //tags input box
+
+
+  });
+
+
+  </script>
+</body>
+</html>
